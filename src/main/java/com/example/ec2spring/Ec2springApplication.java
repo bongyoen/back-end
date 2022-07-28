@@ -8,7 +8,7 @@ public class Ec2springApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(Ec2springApplication.class, args);
-        System.out.println("hello wordl");
+        System.out.println("hello wordl!!");
     }
 
 }
