@@ -23,12 +23,24 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-envers
+    implementation group: 'org.springframework.data', name: 'spring-data-envers', version: '2.2.6.RELEASE'
+
+    // https://mvnrepository.com/artifact/com.twelvemonkeys.servlet/servlet
+    implementation 'com.twelvemonkeys.servlet:servlet:3.7.0'
+
+    // https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg
+    implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.7.0'
+
+    // https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-tiff
+    implementation 'com.twelvemonkeys.imageio:imageio-tiff:3.7.0'
 }
 
 tasks.named('test') {
