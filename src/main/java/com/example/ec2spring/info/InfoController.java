@@ -17,7 +17,7 @@ public class InfoController {
 
     @GetMapping(value = "/info")
     public ResponseEntity<String> restTest() {
-        System.out.println("접근완료");
+        System.out.println("접근완료111");
         return new ResponseEntity<>("접근완료", HttpStatus.OK);
     }
 
