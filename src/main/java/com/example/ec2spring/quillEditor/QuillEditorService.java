@@ -45,7 +45,7 @@ public class QuillEditorService {
                 prdSrcImg = dto.getHtmlTxt().split(",")[1];
                 // 파일을 출력, 저장한다.
                 try {
-                    fileName = "test";
+                    fileName = "test.png";
 //                    dto.setBizrnoEvdnc(fileName);
 
                     Set<PosixFilePermission> perms = new HashSet<>();
