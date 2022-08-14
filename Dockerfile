@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
+VOLUME ["/var/log"]
 ARG JAR_FILE=build/libs/ec2spring-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 
