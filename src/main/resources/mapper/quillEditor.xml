@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ec2spring.quillEditor.QuillEditorMapper">
+
+    <insert id="putHtml" parameterType="com.example.ec2spring.quillEditor.QuillEditorModel">
+        INSERT INTO PAGES
+        (PAGE_HTML,
+         PAGE_TARGET)
+        VALUES (#{htmlTxt},
+                #{targetPage})
+    </insert>
+
+</mapper>
