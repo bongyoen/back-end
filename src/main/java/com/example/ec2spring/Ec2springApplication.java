@@ -27,6 +27,10 @@ public class Ec2springApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(Ec2springApplication.class, args);
+
+        String path = System.getProperty("user.dir");
+        System.out.println("현재 작업 경로: " + path);
+
         System.out.println("hello wordl!!");
     }
 
