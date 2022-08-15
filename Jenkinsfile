@@ -4,6 +4,7 @@ pipeline {
     stage('Set Variable') {
       steps {
         script {
+
           IMAGE_NAME = "front-end:latest"
           IMAGE_STORAGE = "ec2-user"
           IMAGE_STORAGE_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
