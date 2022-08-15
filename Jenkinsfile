@@ -14,12 +14,6 @@ pipeline {
       }
     }
 
-    stage('Clean Build Test') {
-      steps {
-        sh 'chmod +x gradlew'
-        sh './gradlew clean build test'
-      }
-    }
 
     stage('Build Container Image') {
       steps {
