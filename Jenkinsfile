@@ -15,11 +15,11 @@ pipeline {
             }
         }
 
-//         stage("Clean Build Test") {
-//             steps {
-//                 sh "./gradlew clean build test"
-//             }
-//         }
+       stage("Clean Build Test") {
+           steps {
+               sh "./gradlew clean build test"
+           }
+       }
 
         stage("Build Container Image") {
             steps {
