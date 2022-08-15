@@ -103,3 +103,6 @@
 2022-08-14 14:02:40.762  INFO 8768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2022-08-14 14:02:40.799  INFO 8768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-08-14 14:02:40.810  INFO 8768 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Started Ec2springApplication in 4.213 seconds (JVM running for 4.842)
+2022-08-14 14:40:26.546  INFO 8768 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 14:40:26.551  INFO 8768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-14 14:40:26.699  INFO 8768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
