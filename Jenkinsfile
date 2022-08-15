@@ -36,7 +36,6 @@ pipeline {
           docker.withRegistry("https://${IMAGE_STORAGE}", IMAGE_STORAGE_CREDENTIAL) {
             image.push("${env.BUILD_NUMBER}")
             image.push("latest")
-            image
           }
         }
       }
