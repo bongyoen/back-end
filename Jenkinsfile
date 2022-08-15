@@ -5,9 +5,9 @@ pipeline {
       steps {
         script {
           IMAGE_NAME = "front-end"
-          IMAGE_STORAGE = ""
-          IMAGE_STORAGE_CREDENTIAL = "ContainerRegistry"
-          SSH_CONNECTION = "ec2-user@13.56.107.91'"
+          IMAGE_STORAGE = "ec2-user@13.56.107.91"
+          IMAGE_STORAGE_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
+          SSH_CONNECTION = "ec2-user@13.56.107.91"
           SSH_CONNECTION_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
         }
 
