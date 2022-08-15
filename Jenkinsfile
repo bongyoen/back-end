@@ -1,6 +1,15 @@
 pipeline {
   agent any
   stages {
+    stage('Clean Build Test') {
+       steps {
+         sh 'chmod +x gradlew'
+         sh './gradlew clean build test'
+       }
+    }
+
+
+
     stage('Set Variable') {
       steps {
         script {
@@ -10,7 +19,6 @@ pipeline {
           SSH_CONNECTION = "ec2-user@13.56.107.91"
           SSH_CONNECTION_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
         }
-
       }
     }
 
@@ -20,7 +28,6 @@ pipeline {
         script {
           image = docker.build("${IMAGE_STORAGE}/${IMAGE_NAME}")
         }
-
       }
     }
 
@@ -33,7 +40,6 @@ pipeline {
             image
           }
         }
-
       }
     }
 
