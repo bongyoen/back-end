@@ -6,15 +6,15 @@
 #EXPOSE 8080
 #
 #ENTRYPOINT ["java","-jar","/app.jar"]
-#
+
 
 
 
 FROM amazoncorretto:11-alpine-jdk
-MAINTAINER DevBeekei <devbeekei.shin@gmail.com>
+#MAINTAINER DevBeekei <devbeekei.shin@gmail.com>
 
 EXPOSE 8080
 
 ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} deploy-app.jar
+COPY ${JAR_FILE} app.jar
 CMD java -jar ./deploy-app.jar
