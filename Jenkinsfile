@@ -13,6 +13,7 @@ pipeline {
     stage('Set Variable') {
       steps {
         script {
+          junit testResults: 'results.xml', skipPublishingChecks: true
           IMAGE_NAME = "front-end:latest"
           IMAGE_STORAGE = "ec2-user@13.56.107.91"
           IMAGE_STORAGE_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
@@ -21,7 +22,6 @@ pipeline {
         }
       }
     }
-
 
     stage('Build Container Image') {
       steps {
