@@ -16,7 +16,7 @@ pipeline {
           IMAGE_NAME = "front-end:latest"
           IMAGE_STORAGE = "ec2-user"
           IMAGE_STORAGE_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
-          SSH_CONNECTION = "ec2-user@13.56.107.91"
+          SSH_CONNECTION = "ec2_keypair.pem ec2-user@13.56.107.91"
           SSH_CONNECTION_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
         }
       }
