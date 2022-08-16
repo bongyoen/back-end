@@ -11,7 +11,7 @@ pipeline {
     stage('Set Variable') {
       steps {
         script {
-          IMAGE_NAME = "front-end"
+          IMAGE_NAME = "front-end:latest"
           IMAGE_STORAGE = "ec2-user"
           IMAGE_STORAGE_CREDENTIAL = "ContainerRegistry"
           SSH_CONNECTION = "ec2-user@13.56.107.91"
@@ -33,7 +33,7 @@ pipeline {
     stage('Server Run') {
       steps {
         sshagent(credentials: [SSH_CONNECTION_CREDENTIAL]) {
-          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker run -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_STORAGE}/${IMAGE_NAME}:latest'"
+          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker run -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_STORAGE}/${IMAGE_NAME}'"
           sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker rm -f ${IMAGE_NAME}'"
           sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker rmi -f ${IMAGE_STORAGE}/${IMAGE_NAME}:latest'"
           sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker images'"
