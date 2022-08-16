@@ -42,7 +42,7 @@ pipeline {
             }
           }
 
-          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker run -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_STORAGE}/${IMAGE_NAME}:latest'"
+          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker run -v /home/ec2-user/reactVolume:/src/main/resources/upload  -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_STORAGE}/${IMAGE_NAME}:latest'"
           sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'echo y | docker image prune -a'"
         }
 
