@@ -33,9 +33,10 @@ pipeline {
     stage('Server Run') {
       steps {
         sshagent(credentials: [SSH_CONNECTION_CREDENTIAL]) {
+          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker stop ${IMAGE_NAME}'"
+          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker rm -f ${IMAGE_NAME}'"
           sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker run -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_STORAGE}/${IMAGE_NAME}:latest'"
-          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker images'"
-          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker ps'"
+          sh "ssh -o StrictHostKeyChecking=no ${SSH_CONNECTION} 'docker image prune -a'"
         }
 
       }
