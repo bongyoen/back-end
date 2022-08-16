@@ -14,8 +14,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFilePermission;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 @Slf4j
@@ -38,52 +42,106 @@ public class QuillEditorService {
     void savePrdImg(QuillEditorModel dto) {
         String fileName;
         String prdSrcImg;
+
         // 이미지 저장
         if (dto.getHtmlTxt() != null) {
-            // base64형식의 이미지가 있는 경우
-            if (dto.getHtmlTxt().contains("base64,")) {
-                prdSrcImg = dto.getHtmlTxt().split(",")[1];
-                // 파일을 출력, 저장한다.
-                try {
-                    fileName = "test";
-//                    dto.setBizrnoEvdnc(fileName);
 
-                    Set<PosixFilePermission> perms = new HashSet<>();
-                    //add owners permission 644
-                    perms.add(PosixFilePermission.OWNER_READ);
-                    perms.add(PosixFilePermission.OWNER_WRITE);
-                    perms.add(PosixFilePermission.GROUP_READ);
-                    perms.add(PosixFilePermission.OTHERS_READ);
-                    Path targetLocation = this.fileStorageLocation.resolve(fileName);
+            Pattern pattern = Pattern.compile("(<img[^>]+src\\s*=\\s*[\\\"']?([^>\\\"']+)[\\\"']?[^>]*>)");
+            Matcher matcher = pattern.matcher(dto.getHtmlTxt());
+            StringBuffer buffer = new StringBuffer();
+            if (matcher.find()) {
+                while (matcher.find()) {
+                    fileName = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 
-                    System.out.println(targetLocation);
-                    byte[] imageBytes = DatatypeConverter.parseBase64Binary(prdSrcImg);
-                    BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
+                    try {
+                        Set<PosixFilePermission> perms = new HashSet<>();
+                        //add owners permission 644
+                        perms.add(PosixFilePermission.OWNER_READ);
+                        perms.add(PosixFilePermission.OWNER_WRITE);
+                        perms.add(PosixFilePermission.GROUP_READ);
+                        perms.add(PosixFilePermission.OTHERS_READ);
+                        Path targetLocation = this.fileStorageLocation.resolve(dto.getTargetPage()+"_"+fileName+".png");
 
-                    float imgWidth = readImg.getWidth();
-                    float imgHeight = readImg.getHeight();
+                        byte[] imageBytes = DatatypeConverter.parseBase64Binary(matcher.group(2).split(",")[1]);
+                        BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
 
-                    /*이미지 리사이징 코드*/
-                    if (imgWidth > 1000) {
-                        int reWt = 1000;
-                        int reHi = (int) (reWt*imgHeight/imgWidth) ;
+                        float imgWidth = readImg.getWidth();
+                        float imgHeight = readImg.getHeight();
 
-                        Image reImg = readImg.getScaledInstance(reWt, reHi, Image.SCALE_SMOOTH);
-                        readImg = new BufferedImage(reWt, reHi, BufferedImage.TYPE_INT_RGB);
-                        Graphics graphics = readImg.getGraphics();
-                        graphics.drawImage(reImg, 0, 0, null);
-                        graphics.dispose();
+                        /*이미지 리사이징 코드*/
+                        if (imgWidth > 1000) {
+                            int reWt = 1000;
+                            int reHi = (int) (reWt*imgHeight/imgWidth) ;
+
+                            Image reImg = readImg.getScaledInstance(reWt, reHi, Image.SCALE_SMOOTH);
+                            readImg = new BufferedImage(reWt, reHi, BufferedImage.TYPE_INT_RGB);
+                            Graphics graphics = readImg.getGraphics();
+                            graphics.drawImage(reImg, 0, 0, null);
+                            graphics.dispose();
+                        }
+
+                        ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
+
+                        String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/"+dto.getTargetPage()+"_"+fileName+".png");
+                        matcher.appendReplacement(buffer, fixImg);
+                        if (!System.getProperty("os.name").contains("Windows")) {
+                            Files.setPosixFilePermissions(targetLocation, perms);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
-                    ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
-
-                    if (!System.getProperty("os.name").contains("Windows")) {
-                        Files.setPosixFilePermissions(targetLocation, perms);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
+                matcher.appendTail(buffer);
+                dto.setHtmlTxt(buffer.toString());
             }
+
+
+
+
+            // base64형식의 이미지가 있는 경우
+//            if (dto.getHtmlTxt().contains("base64,")) {
+//                prdSrcImg = dto.getHtmlTxt().split(",")[1];
+//                // 파일을 출력, 저장한다.
+//                try {
+//                    fileName = "test";
+////                    dto.setBizrnoEvdnc(fileName);
+//
+//                    Set<PosixFilePermission> perms = new HashSet<>();
+//                    //add owners permission 644
+//                    perms.add(PosixFilePermission.OWNER_READ);
+//                    perms.add(PosixFilePermission.OWNER_WRITE);
+//                    perms.add(PosixFilePermission.GROUP_READ);
+//                    perms.add(PosixFilePermission.OTHERS_READ);
+//                    Path targetLocation = this.fileStorageLocation.resolve(fileName);
+//
+//                    byte[] imageBytes = DatatypeConverter.parseBase64Binary(prdSrcImg);
+//                    BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
+//
+//                    float imgWidth = readImg.getWidth();
+//                    float imgHeight = readImg.getHeight();
+//
+//                    /*이미지 리사이징 코드*/
+//                    if (imgWidth > 1000) {
+//                        int reWt = 1000;
+//                        int reHi = (int) (reWt*imgHeight/imgWidth) ;
+//
+//                        Image reImg = readImg.getScaledInstance(reWt, reHi, Image.SCALE_SMOOTH);
+//                        readImg = new BufferedImage(reWt, reHi, BufferedImage.TYPE_INT_RGB);
+//                        Graphics graphics = readImg.getGraphics();
+//                        graphics.drawImage(reImg, 0, 0, null);
+//                        graphics.dispose();
+//                    }
+//
+//                    ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
+//
+//                    if (!System.getProperty("os.name").contains("Windows")) {
+//                        Files.setPosixFilePermissions(targetLocation, perms);
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
 
         }
 
