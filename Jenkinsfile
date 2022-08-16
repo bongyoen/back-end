@@ -14,7 +14,7 @@ pipeline {
       steps {
         script {
           IMAGE_NAME = "front-end:latest"
-          IMAGE_STORAGE = "https://hub.docker.com/repository/docker/kuhj7593/back-end"
+          IMAGE_STORAGE = "kuhj7593/back-end"
           IMAGE_STORAGE_CREDENTIAL = "ContainerRegistry"
           SSH_CONNECTION = "ec2_keypair.pem ec2-user@13.56.107.91"
           SSH_CONNECTION_CREDENTIAL = "Deploy-Server-SSH-Crednetial"
