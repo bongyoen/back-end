@@ -97,7 +97,7 @@ public class QuillEditorService {
 
             }
 
-            if (!buffer.isEmpty()) {
+            if (buffer.length() > 0) {
                 matcher.appendTail(buffer);
                 dto.setHtmlTxt(buffer.toString());
                 System.out.println(dto.getHtmlTxt());
