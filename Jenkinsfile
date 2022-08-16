@@ -30,16 +30,7 @@ pipeline {
       }
     }
 
-    stage('Push Container Image') {
-      steps {
-        script {
-          docker.withRegistry("https://${IMAGE_STORAGE}", IMAGE_STORAGE_CREDENTIAL) {
-            image.push("${env.BUILD_NUMBER}")
-            image.push("latest")
-          }
-        }
-      }
-    }
+
 
     stage('Server Run') {
       steps {
