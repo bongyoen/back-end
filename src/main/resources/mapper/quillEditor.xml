@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.ec2spring.quillEditor.QuillEditorMapper">
 
-    <insert id="putHtml" parameterType="com.example.ec2spring.quillEditor.QuillEditorModel">
+    <insert id="putHtml" keyProperty="pageTarget" parameterType="com.example.ec2spring.quillEditor.QuillEditorModel">
         INSERT INTO PAGES
         (PAGE_HTML,
          PAGE_TARGET,
@@ -10,6 +10,9 @@
         VALUES (#{pageHtml},
                 #{pageTarget},
                 #{title})
+        ON DUPLICATE KEY UPDATE
+        PAGE_HTML = #{pageHtml}
+
     </insert>
 
     <select id="getHtml" parameterType="String" resultType="com.example.ec2spring.quillEditor.QuillEditorModel">
