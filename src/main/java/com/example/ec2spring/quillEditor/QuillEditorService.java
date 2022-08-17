@@ -43,10 +43,10 @@ public class QuillEditorService {
         String prdSrcImg;
 
         // 이미지 저장
-        if (dto.getHtmlTxt() != null) {
+        if (dto.getPageHtml() != null) {
 
             Pattern pattern = Pattern.compile("(<img[^>]+src\\s*=\\s*[\\\"']?([^>\\\"']+)[\\\"']?[^>]*>)");
-            Matcher matcher = pattern.matcher(dto.getHtmlTxt());
+            Matcher matcher = pattern.matcher(dto.getPageHtml());
             StringBuffer buffer = new StringBuffer();
 
             while (matcher.find()) {
@@ -59,7 +59,7 @@ public class QuillEditorService {
                     perms.add(PosixFilePermission.OWNER_WRITE);
                     perms.add(PosixFilePermission.GROUP_READ);
                     perms.add(PosixFilePermission.OTHERS_READ);
-                    Path targetLocation = this.fileStorageLocation.resolve(dto.getTargetPage()+"_"+fileName+".png");
+                    Path targetLocation = this.fileStorageLocation.resolve(dto.getPageTarget()+"_"+fileName+".png");
 
                     byte[] imageBytes = DatatypeConverter.parseBase64Binary(matcher.group(2).split(",")[1]);
                     BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
@@ -78,7 +78,7 @@ public class QuillEditorService {
                         graphics.drawImage(reImg, 0, 0, null);
                         graphics.dispose();
                     }
-                    String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/"+dto.getTargetPage()+"_"+fileName+".png");
+                    String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/"+dto.getPageTarget()+"_"+fileName+".png");
                     matcher.appendReplacement(buffer, fixImg);
 
 
@@ -96,7 +96,7 @@ public class QuillEditorService {
 
             if (buffer.length() > 0) {
                 matcher.appendTail(buffer);
-                dto.setHtmlTxt(buffer.toString());
+                dto.setPageHtml(buffer.toString());
             }
 
         }

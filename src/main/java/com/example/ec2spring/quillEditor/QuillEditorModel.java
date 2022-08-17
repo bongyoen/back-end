@@ -8,7 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class QuillEditorModel {
-    private String htmlTxt;
-    private String targetPage;
+    private String pageHtml;
+    private String pageTarget;
     private String title;
 }
