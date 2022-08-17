@@ -1647,3 +1647,125 @@
 2022-08-17 17:52:26.299  INFO 8132 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2022-08-17 17:52:26.666  WARN 8132 --- [http-nio-8080-exec-1] o.m.jdbc.message.server.ErrorPacket      : Error: 1366-22007: Incorrect string value: '\xF0\x9F\x98\x8A\xEC\x95...' for column `ec2maria`.`PAGES`.`PAGE_HTML` at row 1
 2022-08-17 17:52:52.378  WARN 8132 --- [http-nio-8080-exec-2] o.m.jdbc.message.server.ErrorPacket      : Error: 1048-23000: Column 'PAGE_TARGET' cannot be null
+2022-08-17 17:53:48.773  WARN 8132 --- [http-nio-8080-exec-5] o.m.jdbc.message.server.ErrorPacket      : Error: 1366-22007: Incorrect string value: '\xF0\x9F\x98\x8A\xEC\x95...' for column `ec2maria`.`PAGES`.`PAGE_HTML` at row 1
+2022-08-17 17:54:57.373  WARN 8132 --- [http-nio-8080-exec-6] o.m.jdbc.message.server.ErrorPacket      : Error: 1366-22007: Incorrect string value: '\xF0\x9F\x98\x8A\xEC\x95...' for column `ec2maria`.`PAGES`.`PAGE_HTML` at row 1
+2022-08-17 17:55:48.958  WARN 8132 --- [http-nio-8080-exec-7] o.m.jdbc.message.server.ErrorPacket      : Error: 1366-22007: Incorrect string value: '\xF0\x9F\x98\x8A\xEC\x95...' for column `ec2maria`.`PAGES`.`PAGE_HTML` at row 1
+2022-08-17 18:03:36.585  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@4677afea ((conn=19609) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.586  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@4df4f98c ((conn=19610) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.587  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@36870727 ((conn=19611) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.587  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@35d305d8 ((conn=19612) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.587  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@67655a9e ((conn=19613) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.587  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@db7f767 ((conn=19614) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.588  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@30767c9 ((conn=19615) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.588  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@2ed74fb4 ((conn=19616) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.588  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@632b415a ((conn=19617) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:36.589  WARN 8132 --- [http-nio-8080-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.Connection@51159e97 ((conn=19618) Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2022-08-17 18:03:37.513  WARN 8132 --- [http-nio-8080-exec-8] o.m.jdbc.message.server.ErrorPacket      : Error: 1366-22007: Incorrect string value: '\xF0\x9F\x98\x8A\xEC\x95...' for column `ec2maria`.`PAGES`.`PAGE_HTML` at row 1
+2022-08-17 18:08:19.433  INFO 8132 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:08:19.433  INFO 8132 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-17 18:08:19.606  INFO 8132 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-17 18:08:22.918  INFO 6932 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Starting Ec2springApplication using Java 17.0.4 on DESKTOP-FHLQ1OE with PID 6932 (C:\Users\kuhj1\IdeaProjects\ec2spring\build\classes\java\main started by kuhj1 in C:\Users\kuhj1\IdeaProjects\ec2spring)
+2022-08-17 18:08:22.925  INFO 6932 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 18:08:22.998  INFO 6932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 18:08:22.999  INFO 6932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 18:08:23.360  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:08:23.360  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 18:08:23.373  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-08-17 18:08:23.505  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:08:23.505  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-08-17 18:08:23.505  INFO 6932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2022-08-17 18:08:23.701  INFO 6932 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f7918390] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-17 18:08:23.750  INFO 6932 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-08-17 18:08:23.970  INFO 6932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 18:08:23.985  INFO 6932 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 18:08:23.985  INFO 6932 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 18:08:24.048  INFO 6932 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 18:08:24.048  INFO 6932 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1049 ms
+2022-08-17 18:08:24.158  INFO 6932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 18:08:24.862  INFO 6932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 18:08:24.894  INFO 6932 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 18:08:24.939  INFO 6932 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 18:08:25.052  INFO 6932 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 18:08:25.120  INFO 6932 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-17 18:08:25.270  INFO 6932 --- [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-08-17 18:08:25.381  INFO 6932 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 18:08:25.381  INFO 6932 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:08:25.558  WARN 6932 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 18:08:25.830  INFO 6932 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 18:08:25.863  INFO 6932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 18:08:25.873  INFO 6932 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Started Ec2springApplication in 3.27 seconds (JVM running for 3.795)
+2022-08-17 18:08:33.773  INFO 6932 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 18:08:33.773  INFO 6932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 18:08:33.775  INFO 6932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-17 18:09:00.159  INFO 6932 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:09:00.161  INFO 6932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-17 18:09:00.310  INFO 6932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-17 18:09:03.535  INFO 20460 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Starting Ec2springApplication using Java 17.0.4 on DESKTOP-FHLQ1OE with PID 20460 (C:\Users\kuhj1\IdeaProjects\ec2spring\build\classes\java\main started by kuhj1 in C:\Users\kuhj1\IdeaProjects\ec2spring)
+2022-08-17 18:09:03.542  INFO 20460 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 18:09:03.616  INFO 20460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 18:09:03.616  INFO 20460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 18:09:03.997  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:09:03.998  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 18:09:04.007  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-08-17 18:09:04.148  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:09:04.148  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-08-17 18:09:04.150  INFO 20460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2022-08-17 18:09:04.350  INFO 20460 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1ad2ea79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-17 18:09:04.381  INFO 20460 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-08-17 18:09:04.591  INFO 20460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 18:09:04.598  INFO 20460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 18:09:04.598  INFO 20460 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 18:09:04.663  INFO 20460 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 18:09:04.664  INFO 20460 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1048 ms
+2022-08-17 18:09:04.753  INFO 20460 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 18:09:05.454  INFO 20460 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 18:09:05.478  INFO 20460 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 18:09:05.507  INFO 20460 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 18:09:05.586  INFO 20460 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 18:09:05.647  INFO 20460 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-17 18:09:05.799  INFO 20460 --- [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-08-17 18:09:05.902  INFO 20460 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 18:09:05.908  INFO 20460 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:09:06.103  WARN 20460 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 18:09:06.544  INFO 20460 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 18:09:06.576  INFO 20460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 18:09:06.586  INFO 20460 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Started Ec2springApplication in 3.389 seconds (JVM running for 3.936)
+2022-08-17 18:09:07.448  INFO 20460 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 18:09:07.449  INFO 20460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 18:09:07.450  INFO 20460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-17 18:10:09.305  INFO 20460 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:10:09.307  INFO 20460 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-17 18:10:09.461  INFO 20460 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-17 18:10:12.701  INFO 19116 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Starting Ec2springApplication using Java 17.0.4 on DESKTOP-FHLQ1OE with PID 19116 (C:\Users\kuhj1\IdeaProjects\ec2spring\build\classes\java\main started by kuhj1 in C:\Users\kuhj1\IdeaProjects\ec2spring)
+2022-08-17 18:10:12.709  INFO 19116 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 18:10:12.793  INFO 19116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 18:10:12.794  INFO 19116 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 18:10:13.216  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:10:13.216  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 18:10:13.227  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2022-08-17 18:10:13.369  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-08-17 18:10:13.369  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-08-17 18:10:13.371  INFO 19116 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2022-08-17 18:10:13.570  INFO 19116 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f9e9307b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-17 18:10:13.605  INFO 19116 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-08-17 18:10:13.813  INFO 19116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 18:10:13.820  INFO 19116 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 18:10:13.820  INFO 19116 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 18:10:13.882  INFO 19116 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 18:10:13.882  INFO 19116 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1088 ms
+2022-08-17 18:10:13.972  INFO 19116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 18:10:14.674  INFO 19116 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 18:10:14.698  INFO 19116 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 18:10:14.729  INFO 19116 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 18:10:14.805  INFO 19116 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 18:10:14.862  INFO 19116 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-17 18:10:15.013  INFO 19116 --- [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2022-08-17 18:10:15.102  INFO 19116 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 18:10:15.107  INFO 19116 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 18:10:15.282  WARN 19116 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 18:10:15.556  INFO 19116 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 18:10:15.586  INFO 19116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 18:10:15.595  INFO 19116 --- [restartedMain] c.e.ec2spring.Ec2springApplication       : Started Ec2springApplication in 3.247 seconds (JVM running for 3.843)
+2022-08-17 18:10:17.141  INFO 19116 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 18:10:17.142  INFO 19116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 18:10:17.143  INFO 19116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
