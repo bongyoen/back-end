@@ -12,4 +12,13 @@
                 #{title})
     </insert>
 
+    <select id="getHtml" parameterType="String" resultType="com.example.ec2spring.quillEditor.QuillEditorModel">
+        SELECT
+            TITLE,
+            PAGE_HTML,
+            PAGE_TARGET
+        FROM PAGES
+        WHERE PAGE_TARGET = #{value}
+    </select>
+
 </mapper>

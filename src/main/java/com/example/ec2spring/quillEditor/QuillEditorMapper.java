@@ -5,4 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface QuillEditorMapper {
     void putHtml(QuillEditorModel model);
+
+    QuillEditorModel getHtml(String path);
 }

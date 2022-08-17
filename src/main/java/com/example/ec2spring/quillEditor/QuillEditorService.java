@@ -50,7 +50,6 @@ public class QuillEditorService {
             StringBuffer buffer = new StringBuffer();
 
             while (matcher.find()) {
-                System.out.println("실행횟수");
                 fileName = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 
                 try {
@@ -80,7 +79,6 @@ public class QuillEditorService {
                         graphics.dispose();
                     }
                     String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/"+dto.getTargetPage()+"_"+fileName+".png");
-                    System.out.println(fixImg);
                     matcher.appendReplacement(buffer, fixImg);
 
 
@@ -99,61 +97,16 @@ public class QuillEditorService {
             if (buffer.length() > 0) {
                 matcher.appendTail(buffer);
                 dto.setHtmlTxt(buffer.toString());
-                System.out.println(dto.getHtmlTxt());
             }
-
-
-
-
-            // base64형식의 이미지가 있는 경우
-//            if (dto.getHtmlTxt().contains("base64,")) {
-//                prdSrcImg = dto.getHtmlTxt().split(",")[1];
-//                // 파일을 출력, 저장한다.
-//                try {
-//                    fileName = "test";
-////                    dto.setBizrnoEvdnc(fileName);
-//
-//                    Set<PosixFilePermission> perms = new HashSet<>();
-//                    //add owners permission 644
-//                    perms.add(PosixFilePermission.OWNER_READ);
-//                    perms.add(PosixFilePermission.OWNER_WRITE);
-//                    perms.add(PosixFilePermission.GROUP_READ);
-//                    perms.add(PosixFilePermission.OTHERS_READ);
-//                    Path targetLocation = this.fileStorageLocation.resolve(fileName);
-//
-//                    byte[] imageBytes = DatatypeConverter.parseBase64Binary(prdSrcImg);
-//                    BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
-//
-//                    float imgWidth = readImg.getWidth();
-//                    float imgHeight = readImg.getHeight();
-//
-//                    /*이미지 리사이징 코드*/
-//                    if (imgWidth > 1000) {
-//                        int reWt = 1000;
-//                        int reHi = (int) (reWt*imgHeight/imgWidth) ;
-//
-//                        Image reImg = readImg.getScaledInstance(reWt, reHi, Image.SCALE_SMOOTH);
-//                        readImg = new BufferedImage(reWt, reHi, BufferedImage.TYPE_INT_RGB);
-//                        Graphics graphics = readImg.getGraphics();
-//                        graphics.drawImage(reImg, 0, 0, null);
-//                        graphics.dispose();
-//                    }
-//
-//                    ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
-//
-//                    if (!System.getProperty("os.name").contains("Windows")) {
-//                        Files.setPosixFilePermissions(targetLocation, perms);
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
 
         }
 
 
     }
 
+    public QuillEditorModel getHtml(String path) {
+        return editorMapper.getHtml(path);
+    }
 }
 
 /*    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
