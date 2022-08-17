@@ -7,8 +7,8 @@
         (PAGE_HTML,
          PAGE_TARGET,
          TITLE)
-        VALUES (#{htmlTxt},
-                #{targetPage},
+        VALUES (#{pageHtml},
+                #{pageTarget},
                 #{title})
     </insert>
 
