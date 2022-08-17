@@ -10,4 +10,5 @@ import lombok.ToString;
 public class QuillEditorModel {
     private String htmlTxt;
     private String targetPage;
+    private String title;
 }

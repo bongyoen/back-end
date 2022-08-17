@@ -34,7 +34,6 @@ public class QuillEditorService {
     }
 
     public void putHtml(QuillEditorModel model) {
-//        System.out.println(model);
         savePrdImg(model);
         editorMapper.putHtml(model);
     }

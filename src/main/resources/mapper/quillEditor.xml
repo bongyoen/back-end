@@ -5,9 +5,11 @@
     <insert id="putHtml" parameterType="com.example.ec2spring.quillEditor.QuillEditorModel">
         INSERT INTO PAGES
         (PAGE_HTML,
-         PAGE_TARGET)
+         PAGE_TARGET,
+         TITLE)
         VALUES (#{htmlTxt},
-                #{targetPage})
+                #{targetPage},
+                #{title})
     </insert>
 
 </mapper>
