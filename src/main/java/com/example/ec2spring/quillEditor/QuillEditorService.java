@@ -41,7 +41,6 @@ public class QuillEditorService {
 
     void savePrdImg(QuillEditorModel dto) {
         String fileName;
-        String prdSrcImg;
 
         // 이미지 저장
         if (dto.getPageHtml() != null) {
@@ -51,6 +50,7 @@ public class QuillEditorService {
             StringBuffer buffer = new StringBuffer();
 
             while (matcher.find()) {
+                if (!dto.getPageHtml().contains("base64")) continue;
                 fileName = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
 
                 try {
