@@ -22,6 +22,7 @@ public class QuillEditorController {
             editorService.putHtml(model);
             return new ResponseEntity<>("저장완료", HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>("저장실패", HttpStatus.BAD_REQUEST);
         }
     }

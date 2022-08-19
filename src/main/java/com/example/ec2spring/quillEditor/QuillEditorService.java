@@ -49,8 +49,6 @@ public class QuillEditorService {
             int count = 1;
             while (matcher.find()) {
 
-                System.out.println(matcher.group(1).substring(0, 100));
-                System.out.println(matcher.group(2).substring(0, 100));
                 if (!dto.getPageHtml().contains("base64")) continue;
                 String fileName =count + "_" +  dateFormat.format(new Date());
 
@@ -77,11 +75,8 @@ public class QuillEditorService {
                         graphics.drawImage(reImg, 0, 0, null);
                         graphics.dispose();
                     }
-                    System.out.println(fixImg);
-                    System.out.println();
                     ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
                     matcher.appendReplacement(buffer, fixImg);
-//                    System.out.println("buffer : " + buffer);
                     if (!System.getProperty("os.name").contains("Windows"))
                         Files.setPosixFilePermissions(targetLocation, perms);
                 } catch (Exception e) {
@@ -93,7 +88,6 @@ public class QuillEditorService {
             if (buffer.length() > 0) {
                 matcher.appendTail(buffer);
                 dto.setPageHtml(buffer.toString());
-                System.out.println(buffer);
             }
         }
     }
