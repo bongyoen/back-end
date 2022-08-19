@@ -41,15 +41,19 @@ public class QuillEditorService {
     void savePrdImg(QuillEditorModel dto) {
         if (dto.getPageHtml() != null) {
 //            Pattern pattern = Pattern.compile("/<img[^>]*src=[\"']?([^>\"']+)[\"']?[^>]*>/i\n");
-//            Pattern pattern = Pattern.compile("<img[\\s]+src[\\s] =[\\s] (('\"['\"])|(?<src>[^\\s]*))");
-            Pattern pattern = Pattern.compile("<img[^>]*src=[\\”‘]?([^>\\”‘]+)[\\”‘]?[^>]*>");
+            Pattern pattern = Pattern.compile("(<img[^>]*src\\s*=\\s*[\"']?([^>\"\']+)[\"']?[^>]*>)");
+//            Pattern pattern = Pattern.compile("<img[^>]*src=[\\”‘]?([^>\\”‘]+)[\\”‘]?[^>]*>");
             Matcher matcher = pattern.matcher(dto.getPageHtml());
             StringBuffer buffer = new StringBuffer();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
             int count = 1;
             while (matcher.find()) {
+
+                System.out.println(matcher.group(1).substring(0, 100));
+                System.out.println(matcher.group(2).substring(0, 100));
                 if (!dto.getPageHtml().contains("base64")) continue;
                 String fileName =count + "_" +  dateFormat.format(new Date());
+
                 try {
                     Set<PosixFilePermission> perms = new HashSet<>();
                     perms.add(PosixFilePermission.OWNER_READ);
@@ -57,10 +61,12 @@ public class QuillEditorService {
                     perms.add(PosixFilePermission.GROUP_READ);
                     perms.add(PosixFilePermission.OTHERS_READ);
                     Path targetLocation = this.fileStorageLocation.resolve(dto.getPageTarget() + "_" + fileName + ".png");
-                    byte[] imageBytes = DatatypeConverter.parseBase64Binary(matcher.group(1).split(",")[1]);
+                    byte[] imageBytes = DatatypeConverter.parseBase64Binary(matcher.group(2).split(",")[1]);
                     BufferedImage readImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
                     float imgWidth = readImg.getWidth();
                     float imgHeight = readImg.getHeight();
+                    String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/" + dto.getPageTarget() + "_" + fileName + ".png");
+
                     /*이미지 리사이징 코드*/
                     if (imgWidth > 1000) {
                         int reWt = 1000;
@@ -71,9 +77,11 @@ public class QuillEditorService {
                         graphics.drawImage(reImg, 0, 0, null);
                         graphics.dispose();
                     }
-//                    String fixImg = matcher.group(1).replace(matcher.group(2), "/uploads/localdir/" + dto.getPageTarget() + "_" + fileName + ".png");
-                    matcher.appendReplacement(buffer, "/uploads/localdir/" + dto.getPageTarget() + "_" + fileName + ".png");
+                    System.out.println(fixImg);
+                    System.out.println();
                     ImageIO.write(readImg, "png", new File(String.valueOf(targetLocation)));
+                    matcher.appendReplacement(buffer, fixImg);
+//                    System.out.println("buffer : " + buffer);
                     if (!System.getProperty("os.name").contains("Windows"))
                         Files.setPosixFilePermissions(targetLocation, perms);
                 } catch (Exception e) {
@@ -81,9 +89,11 @@ public class QuillEditorService {
                 }
                 count++;
             }
+
             if (buffer.length() > 0) {
                 matcher.appendTail(buffer);
                 dto.setPageHtml(buffer.toString());
+                System.out.println(buffer);
             }
         }
     }
