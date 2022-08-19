@@ -17,13 +17,6 @@ public class InfoController {
 
     @GetMapping(value = "/info")
     public ResponseEntity<String> restTest() {
-        System.out.println("접근완료111");
         return new ResponseEntity<>("접근완료", HttpStatus.OK);
-    }
-
-    @PostMapping(value = "/saveHtml")
-    public ResponseEntity<String> saveHtml(@RequestBody QuillEditorModel model) {
-
-        return new ResponseEntity<>("저장완료", HttpStatus.OK);
     }
 }

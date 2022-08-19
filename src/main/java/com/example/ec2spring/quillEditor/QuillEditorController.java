@@ -18,11 +18,9 @@ public class QuillEditorController {
 
     @PostMapping(value = "/saveHtml")
     public ResponseEntity<String> putHtml(@RequestBody QuillEditorModel model) {
-        System.out.println(123);
         try {
             editorService.putHtml(model);
             return new ResponseEntity<>("저장완료", HttpStatus.OK);
-
         } catch (Exception e) {
             return new ResponseEntity<>("저장실패", HttpStatus.BAD_REQUEST);
         }
