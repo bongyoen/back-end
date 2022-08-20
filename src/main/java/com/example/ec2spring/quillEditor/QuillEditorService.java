@@ -49,7 +49,7 @@ public class QuillEditorService {
             int count = 1;
             while (matcher.find()) {
 
-                if (!dto.getPageHtml().contains("base64")) continue;
+                if (!matcher.group(1).contains("base64")) continue;
                 String fileName =count + "_" +  dateFormat.format(new Date());
 
                 try {
